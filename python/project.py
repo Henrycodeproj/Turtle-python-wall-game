@@ -1,6 +1,7 @@
 import turtle
 import random
 import time
+#designed by Henry Li
 
 #wall counters for functions, didnt work inside function, keep here.
 p2counter = 0
