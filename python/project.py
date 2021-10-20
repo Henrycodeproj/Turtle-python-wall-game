@@ -1,7 +1,7 @@
 import turtle
 import random
 import time
-#designed by Henry Li
+# designed by Henry Li.
 
 #wall counters for functions, didnt work inside function, keep here.
 p2counter = 0
@@ -25,16 +25,16 @@ def game():
   The_turtle.color("blue")
   The_turtle.speed(0)
   The_turtle.penup()
-  The_turtle.goto(500,260)
+  The_turtle.goto(265,220)
 
   #second player
   second_turtle = The_turtle.clone()
   second_turtle.shape("turtle")
   second_turtle.color("green")
-  second_turtle.goto(-500,-260)
+  second_turtle.goto(-276,-260)
 
   #random food spawn
-  randnum = random.randint(-400,400)
+  randnum = random.randint(-250,250)
   randnum2 = random.randint(-200,200)
   ball = turtle.Turtle()
   ball.penup()
@@ -46,14 +46,14 @@ def game():
   scores = turtle.Turtle()
   scores.penup()
   scores.color("white")
-  scores.goto(0,250)
+  scores.goto(0,280)
   scores.hideturtle()
   scores.write("Player 1(Blue):{}  Player 2(Green):{}".format (player1,player2), align = "center", font=  ("courier",10,"normal"))
 
   #Game timer
   timer = turtle.Turtle()
   timer.hideturtle()
-  timer.setpos(-120,300)
+  timer.setpos(-120,250)
   timer.color("white")
 
   #player1 walls
@@ -87,32 +87,35 @@ def game():
   border1 = turtle.Turtle()
   border1.color("white")
   border1.shape("square")
-  border1.shapesize(.25,52,1)
+  border1.shapesize(.25,29.45,1)
   border1.penup()
-  border1.setpos(0,-277)
+  border1.setpos(0,-290)
+
 
   border2 = turtle.Turtle()
   border2.color("white")
   border2.shape("square")
-  border2.shapesize(.25,52.25,1)
+  border2.shapesize(.25,29.64,1)
   border2.penup()
-  border2.setpos(0,282)
+  border2.setpos(-2.5,245)
+
 
   border3 = turtle.Turtle()
   border3.color("white")
   border3.shape("square")
   border3.setheading(90)
-  border3.shapesize(.25,28,1)
+  border3.shapesize(.25,27,1)
   border3.penup()
-  border3.setpos(520,0)
+  border3.setpos(289,-25)
 
   border4 = turtle.Turtle()
   border4.color("white")
   border4.shape("square")
   border4.setheading(90)
-  border4.shapesize(.25,28,1)
+  border4.shapesize(.25,27,1)
   border4.penup()
-  border4.setpos(-520,0)
+  border4.setpos(-297,-25)
+
   #directional functions for blue turtle/first turtle
   def first_turtle_up():
     The_turtle.speed(0)
@@ -288,89 +291,89 @@ def game():
   #food interactions and scoring
 
     if The_turtle.distance(ball) < 20: #first turtle
-      x = random.randint(-400,400)
-      y = random.randint(-200,200)
+      x = random.randint(-265,265)
+      y = random.randint(-240,240)
       ball.goto(x,y)
       player1 += 1
       scores.clear()
       scores.write("Player 1(Blue):{}  Player 2(Green):{}".format (player1, player2), align = "center",     font =("courier",10,"normal"))
     if second_turtle.distance(ball) < 20: #second
-      x = random.randint(-400,400)
-      y = random.randint(-200,200)
+      x = random.randint(-265,265)
+      y = random.randint(-240,240)
       scores.clear()
       player2 += 1 
       ball.goto(x,y)
       scores.write("Player 1(Blue):{}  Player 2(Green):{}".format (player1, player2), align = "center",     font =("courier",10,"normal"))
 
-  #player 1 wall interactions to player 2
+  #player 1 wall interactions to player 2, resets score and spawns turtle and food in new location
 
     if second_turtle.distance(p1wall1) < 20:
-      ball.goto(random.randint(-400,400),random.randint(-200,200))
-      second_turtle.goto(random.randint(-400,400),y = random.randint(-200,200))
+      ball.goto(random.randint(-265,265),random.randint(-240,240))
+      second_turtle.goto(random.randint(-265,265),random.randint(-240,240))
       player1 += 1
       scores.clear()
       scores.write("Player 1(Blue):{}  Player 2(Green):{}".format (player1, player2), align = "center",     font =("courier",10,"normal"))
 
     if second_turtle.distance(p1wall2) < 20:
-      ball.goto(random.randint(-400,400),random.randint(-200,200))
-      second_turtle.goto(random.randint(-400,400),random.randint(-200,200))
+      ball.goto(random.randint(-265,265),random.randint(-240,240))
+      second_turtle.goto(random.randint(-265,265),random.randint(-240,240))
       scores.clear()
       player1 += 1
       scores.write("Player 1(Blue):{}  Player 2(Green):{}".format (player1, player2), align ="center",    font =("courier",10,"normal"))
 
     if second_turtle.distance(p1wall3) < 20:
-      ball.goto(random.randint(-400,400),random.randint(-200,200))
-      second_turtle.goto(random.randint(-400,400),random.randint(-200,200))
+      ball.goto(random.randint(-265,265),random.randint(-240,240))
+      second_turtle.goto(random.randint(-265,265),random.randint(-240,240))
       player1 += 1
       scores.clear()
       scores.write("Player 1(Blue):{}  Player 2(Green):{}".format (player1, player2), align = "center",     font =("courier",10,"normal"))
 
     if second_turtle.distance(p1wall4) < 20:
-      ball.goto(random.randint(-400,400),random.randint(-200,200))
-      second_turtle.goto(random.randint(-400,400),random.randint(-200,200))
+      ball.goto(random.randint(-265,265),random.randint(-240,240))
+      second_turtle.goto(random.randint(-265,265),random.randint(-240,240))
       player1 += 1
       scores.clear()
       scores.write("Player 1(Blue):{}  Player 2(Green):{}".format (player1, player2), align = "center",     font =("courier",10,"normal"))
 
     if second_turtle.distance(p1wall5) < 20:
-      ball.goto(random.randint(-400,400),random.randint(-200,200))
-      second_turtle.goto(random.randint(-400,400),random.randint(-200,200))
-      player2 += 1
+      ball.goto(random.randint(-265,265),random.randint(-240,240))
+      second_turtle.goto(random.randint(-265,265),random.randint(-240,240))
+      player1 += 1
       scores.clear()
       scores.write("Player 1(Blue):{}  Player 2(Green):{}".format (player1, player2), align = "center",     font =("courier",10,"normal"))
 
   #player 2 wall interactions to player 1
     if The_turtle.distance(p2wall1) < 20:
-      ball.goto(random.randint(-400,400),random.randint(-200,200))
-      The_turtle.goto(random.randint(-400,400),random.randint(-200,200))
+      ball.goto(random.randint(-265,265),random.randint(-240,240))
+      The_turtle.goto(random.randint(-265,265),random.randint(-240,240))
       player2 += 1
       scores.clear()
       scores.write("Player 1(Blue):{}  Player 2(Green):{}".format (player1, player2), align = "center",     font =("courier",10,"normal"))
 
     if The_turtle.distance(p2wall2) < 20:
-      ball.goto(random.randint(-400,400),random.randint(-200,200))
-      The_turtle.goto(random.randint(-400,400),random.randint(-200,200))
+      ball.goto(random.randint(-265,265),random.randint(-240,240))
+      The_turtle.goto(random.randint(-265,265),random.randint(-240,240))
       player2 += 1
       scores.clear()
       scores.write("Player 1(Blue):{}  Player 2(Green):{}".format (player1, player2), align = "center",     font =("courier",10,"normal"))
 
     if The_turtle.distance(p2wall3) < 20:
-      ball.goto(random.randint(-400,400),random.randint(-200,200))
-      The_turtle.goto(random.randint(-400,400),random.randint(-200,200))
+      ball.goto(random.randint(-265,265),random.randint(-240,240))
+      The_turtle.goto(random.randint(-265,265),random.randint(-240,240))
       player2 += 1
       scores.clear()
       scores.write("Player 1(Blue):{}  Player 2(Green):{}".format (player1, player2), align = "center",     font =("courier",10,"normal"))
 
     if The_turtle.distance(p2wall4) < 20:
-      ball.goto(random.randint(-400,400),random.randint(-200,200))
-      The_turtle.goto(random.randint(-400,400),random.randint(-200,200))
+      ball.goto(random.randint(-265,265),random.randint(-240,240))
+      The_turtle.goto(random.randint(-265,265),random.randint(-240,240))
       player2 += 1
       scores.clear()
       scores.write("Player 1(Blue):{}  Player 2(Green):{}".format (player1, player2), align = "center", font =("courier",10,"normal"))
 
     if The_turtle.distance(p2wall5) < 20:
-      ball.goto(random.randint(-400,400),random.randint(-200,200))
-      The_turtle.goto(random.randint(-400,400),random.randint(-200,200))
+      ball.goto(random.randint(-265,265),random.randint(-240,240))
+      The_turtle.goto(random.randint(-265,265),random.randint(-240,240))
       player2 += 1
       scores.clear()
       scores.write("Player 1(Blue):{}  Player 2(Green):{}".format (player1, player2), align = "center", font =("courier",10,"normal"))
@@ -402,21 +405,21 @@ def game():
         restart()
 
     #borders for both turtles
-    if The_turtle.xcor() < -512:
-       The_turtle.backward(30)
-    if The_turtle.xcor() > 502:
-      The_turtle.backward(30)
+    if The_turtle.xcor() < -280:
+       The_turtle.backward(20)
+    if The_turtle.xcor() > 270:
+      The_turtle.backward(20)
     if The_turtle.ycor() < -260:
-      The_turtle.backward(30)
-    if The_turtle.ycor() > 270:
-      The_turtle.backward(30)
-    if second_turtle.xcor() < -510:
-      second_turtle.backward(30)
-    if second_turtle.xcor() > 502:
-      second_turtle.backward(30)
+      The_turtle.backward(20)
+    if The_turtle.ycor() > 220:
+      The_turtle.backward(20)
+    if second_turtle.xcor() < -280:
+      second_turtle.backward(20)
+    if second_turtle.xcor() > 270:
+      second_turtle.backward(20)
     if second_turtle.ycor() < -260:
-      second_turtle.backward(30)
-    if second_turtle.ycor() > 270:
-      second_turtle.backward(30)
+      second_turtle.backward(20)
+    if second_turtle.ycor() > 220:
+      second_turtle.backward(20)
 
 game()
