@@ -5,8 +5,8 @@
 
 3. Inspired from a boardgame.
 
-4. For the green turtle/player 2, use wsad for movement and spacebar to spawn walls.
+4. CONTROLS For the green turtle/player 2: Use wsad for movement and spacebar to spawn walls.
 
-5. For the blue turtle/player 1, use the arrows keys, up, down, left, right, and 0 to spawn walls. 
+5. CONTROLS For the blue turtle/player 1: Use the arrows keys, up, down, left, right, and 0 to spawn walls. 
 
 FOR A QUICK DEMO, YOU CAN USE REPL.IT
